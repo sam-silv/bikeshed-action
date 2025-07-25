@@ -1,6 +1,6 @@
 name: 'Bikeshed Bot'
 description: 'An automated code review bot that creates constructive comments and optionally schedules meetings for PR discussions'
-author: 'Sam S'
+author: 'sam-silv'
 
 branding:
   icon: 'message-circle'

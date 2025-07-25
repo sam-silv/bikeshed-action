@@ -72,7 +72,7 @@ jobs:
 
 ```yaml
 - name: Bikeshed Review
-  uses: sams/bikeshed-action@v1
+  uses: sam-silv/bikeshed-action@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -81,7 +81,7 @@ jobs:
 
 ```yaml
 - name: Bikeshed Review with Meetings
-  uses: sams/bikeshed-action@v1
+  uses: sam-silv/bikeshed-action@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     enable-calendar: true
@@ -94,7 +94,7 @@ jobs:
 
 ```yaml
 - name: Friendly Bikeshed Review
-  uses: sams/bikeshed-action@v1
+  uses: sam-silv/bikeshed-action@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     comment-style: friendly
@@ -106,7 +106,7 @@ jobs:
 
 ```yaml
 - name: Formal Code Review
-  uses: sams/bikeshed-action@v1
+  uses: sam-silv/bikeshed-action@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     comment-style: formal

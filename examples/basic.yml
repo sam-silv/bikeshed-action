@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Run Bikeshed Bot
-        uses: sams/bikeshed-action@v1
+        uses: sam-silv/bikeshed-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-style: 'constructive'
