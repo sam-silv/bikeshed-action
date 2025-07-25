@@ -1,0 +1,29 @@
+name: Bikeshed Review with Calendar
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  bikeshed-calendar:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Run Bikeshed Bot with Calendar
+        uses: sams/bikeshed-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-calendar: true
+          google-calendar-credentials: ${{ secrets.GOOGLE_CALENDAR_CREDENTIALS }}
+          google-calendar-id: ${{ secrets.GOOGLE_CALENDAR_ID }}
+          pr-author-email: ${{ github.event.pull_request.user.email }}
+          reviewer-emails: 'team-lead@example.com,senior-dev@example.com'
+          comment-style: 'constructive'
+          max-meetings-per-pr: 5
+          timezone: 'America/New_York'
+          preferred-meeting-hours: '10,14,15,16'

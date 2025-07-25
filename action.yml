@@ -1,0 +1,85 @@
+name: 'Bikeshed Bot'
+description: 'An automated code review bot that creates constructive comments and optionally schedules meetings for PR discussions'
+author: 'Sam S'
+
+branding:
+  icon: 'message-circle'
+  color: 'blue'
+
+inputs:
+  github-token:
+    description: 'GitHub token for API access'
+    required: true
+    default: ${{ github.token }}
+  
+  enable-calendar:
+    description: 'Enable Google Calendar integration for scheduling meetings'
+    required: false
+    default: 'false'
+  
+  google-calendar-credentials:
+    description: 'Google Calendar API credentials (JSON string)'
+    required: false
+  
+  google-calendar-id:
+    description: 'Google Calendar ID to schedule meetings in'
+    required: false
+  
+  max-meetings-per-pr:
+    description: 'Maximum number of meetings to schedule per PR'
+    required: false
+    default: '3'
+  
+  min-concerns:
+    description: 'Minimum number of concerns to find in a PR'
+    required: false
+    default: '1'
+  
+  comment-style:
+    description: 'Style of comments: friendly, formal, or constructive'
+    required: false
+    default: 'constructive'
+  
+  add-labels:
+    description: 'Whether to add labels to the PR'
+    required: false
+    default: 'true'
+  
+  bot-name:
+    description: 'Name of the bot for comments'
+    required: false
+    default: 'Bikeshed Bot'
+  
+  use-emojis:
+    description: 'Whether to use emojis in comments'
+    required: false
+    default: 'true'
+  
+  timezone:
+    description: 'Timezone for scheduling meetings'
+    required: false
+    default: 'America/New_York'
+  
+  preferred-meeting-hours:
+    description: 'Comma-separated list of preferred meeting hours (24h format)'
+    required: false
+    default: '10,14,15'
+  
+  pr-author-email:
+    description: 'Email of the PR author for meeting invites'
+    required: false
+  
+  reviewer-emails:
+    description: 'Comma-separated list of reviewer emails for meeting invites'
+    required: false
+
+outputs:
+  concerns-found:
+    description: 'Number of concerns identified in the PR'
+  
+  meetings-scheduled:
+    description: 'Number of meetings scheduled (if calendar integration is enabled)'
+
+runs:
+  using: 'node20'
+  main: 'src/index.js'

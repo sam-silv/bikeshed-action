@@ -1,0 +1,23 @@
+name: Basic Bikeshed Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  bikeshed:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Run Bikeshed Bot
+        uses: sams/bikeshed-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-style: 'constructive'
+          max-meetings-per-pr: 3
+          min-concerns: 1
