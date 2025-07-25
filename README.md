@@ -1,7 +1,7 @@
 # Bikeshed Bot Action
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/sams/bikeshed-action/actions/workflows/test.yml/badge.svg)](https://github.com/sams/bikeshed-action/actions/workflows/test.yml)
+[![Tests](https://github.com/sam-silv/bikeshed-action/actions/workflows/test.yml/badge.svg)](https://github.com/sam-silv/bikeshed-action/actions/workflows/test.yml)
 
 A GitHub Action that automatically reviews pull requests and creates constructive comments to encourage code quality discussions. Optionally integrates with Google Calendar to schedule meetings for more complex discussions.
 
@@ -33,7 +33,7 @@ jobs:
     
     steps:
       - name: Bikeshed Review
-        uses: sams/bikeshed-action@v1
+        uses: sam-silv/bikeshed-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-style: 'constructive'
@@ -177,7 +177,7 @@ When `add-labels` is enabled, the bot adds:
 
 ```bash
 # Clone the repository
-git clone https://github.com/sams/bikeshed-action
+git clone https://github.com/sam-silv/bikeshed-action
 cd bikeshed-action
 
 # Install dependencies
@@ -223,9 +223,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- 🐛 [Report bugs](https://github.com/sams/bikeshed-action/issues)
-- 💡 [Request features](https://github.com/sams/bikeshed-action/issues)
-- 📖 [Read the docs](https://github.com/sams/bikeshed-action/wiki)
+- 🐛 [Report bugs](https://github.com/sam-silv/bikeshed-action/issues)
+- 💡 [Request features](https://github.com/sam-silv/bikeshed-action/issues)
+- 📖 [Read the docs](https://github.com/sam-silv/bikeshed-action/wiki)
 
 ---
 
